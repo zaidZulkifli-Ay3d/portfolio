@@ -187,26 +187,3 @@ sr.reveal(`.skills__content:nth-child(2), .contact__content:nth-child(2)`, {orig
 sr.reveal(`.qualification__content, .services__card`, {interval: 100})
 
 //resume function
-async function downloadPDF() {
-  const pdfUrl = 'https://example.com/yourfile.pdf'; // Replace with your full URL
-  const fileName = 'downloaded-file.pdf';
-
-  try {
-      const response = await fetch(pdfUrl, { mode: 'cors' });
-      if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = fileName;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-  } catch (error) {
-      console.error('Download failed:', error.message);
-      alert('Failed to download. This might be because the server does not allow CORS.');
-  }
-}

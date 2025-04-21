@@ -552,6 +552,13 @@ body.dark-theme {
   opacity: .1;
 }
 
+.qualification__resume{
+  border: 1pt solid var(--text-color-light);
+  border-radius: 16px;
+  padding: 10px;
+  text-align: center;
+}
+
 /* SERVICES */
 .services__container{
   row-gap: 2.5rem;
